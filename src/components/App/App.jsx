@@ -25,6 +25,18 @@ const getPhotos = () => {
   })
 };
 
+//Here is the put, used for the lik button
+const likeItem = (id) => {
+  axios.put (`/gallery/like/${id}`)
+  .then(response => {
+    console.log('In PUT method', response.data)
+    getPhotos();
+  })
+  .catch(error => {
+    console.log('likeItem failed', error);
+  })
+}
+
     return (
       <div className="App">
         <header className="App-header">
@@ -33,7 +45,7 @@ const getPhotos = () => {
 
         <main>
           {/* Passing one prop to GalleryList */}
-        <GalleryList photoList = {photoList} getPhotos = {getPhotos} />
+        <GalleryList photoList = {photoList} likeItem ={likeItem}/>
         </main>
     
 

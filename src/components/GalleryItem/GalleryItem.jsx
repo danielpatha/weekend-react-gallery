@@ -1,26 +1,34 @@
 import {useState} from "react";
 import './GalleryItem.css';
 
-function GalleryItem({photo}){
-const [photoDesc, setPhotoDesc] = useState(false)
+function GalleryItem({photo, likeItem}){
+const [photoDesc, setPhotoDesc] = useState(true)
+// const [likeAmount, setLikeAmount] = useState(0);
+//Nor did I need this
 
+
+// const onLike = () => {
+//     console.log('clicked like button');
+//     likeItem(photo);
+// }; 
+// I didn't need this above
 
 const getDesc = () => {
-setPhotoDesc(true)
+setPhotoDesc(!photoDesc)
 }
 
 
 return(
     <>
-       {/* <img src={photo.path}
-       alt = {photo.description}
-       /> */}
+       {/* The question mark basically says if it's true do this*/}
+ 
+{photoDesc? <img src={photo.path} onClick={getDesc} />:
+             <h2 onClick={getDesc}> {photo.description} </h2>}
 
-{!photoDesc && <img src={photo.path} onClick={getDesc} />}
-            {photoDesc && <h2>{photo.description}</h2>}
+    <button onClick = {() => likeItem(photo.id)} className="btn">Like</button>
+    {/* This calls the function using the photo.id */}
 
-    <button className="btn">Up Vote</button>
-    
+    <h3>The number of Likes: {photo.likes}</h3>
     </>
 
 

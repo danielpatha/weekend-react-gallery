@@ -8,7 +8,7 @@ function GalleryList({photoList, likeItem}){
 {photoList.map(photo => (
  <GalleryItem
    key ={photo.id}
-photo={photo}
+photo={photo} //This is bascially each photo, photo: { id: 1, description, path , likes}
 likeItem = {likeItem}
             />))}
         </>

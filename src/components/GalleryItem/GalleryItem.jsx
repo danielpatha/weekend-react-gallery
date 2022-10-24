@@ -19,17 +19,24 @@ setPhotoDesc(!photoDesc)
 
 
 return(
-    <>
+    <section>
        {/* The question mark basically says if it's true do this*/}
- 
+
+
+
+
 {photoDesc? <img src={photo.path} onClick={getDesc} />:
              <h2 onClick={getDesc}> {photo.description} </h2>}
 
     <button onClick = {() => likeItem(photo.id)} className="btn">Like</button>
     {/* This calls the function using the photo.id */}
 
-    <h3>The number of Likes: {photo.likes}</h3>
-    </>
+    {photo.likes === 0 ?
+   <div> No one likes this Image</div>:
+   <h3>The number of Likes: {photo.likes}</h3>
+} 
+
+    </section>
 
 
 )

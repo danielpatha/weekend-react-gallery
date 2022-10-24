@@ -1,14 +1,25 @@
+import {useState} from "react";
 import './GalleryItem.css';
-function GalleryItem({photo,getPhotos}){
+
+function GalleryItem({photo}){
+const [photoDesc, setPhotoDesc] = useState(false)
+
+
+const getDesc = () => {
+setPhotoDesc(true)
+}
+
 
 return(
     <>
-    {/* <p> {photo.description} </p> */}
-       <img src={photo.path}
-       id={photo.id}
+       {/* <img src={photo.path}
        alt = {photo.description}
-       />
+       /> */}
 
+{!photoDesc && <img src={photo.path} onClick={getDesc} />}
+            {photoDesc && <h2>{photo.description}</h2>}
+
+    <button className="btn">Up Vote</button>
     
     </>
 

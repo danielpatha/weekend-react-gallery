@@ -1,4 +1,11 @@
-img{
-    width: 300px;
-    height: 300px;
+.btn {
+    display: grid;
+    color:black
 }
+
+
+img{
+    width: 150px;
+    height: 150px;
+}
+

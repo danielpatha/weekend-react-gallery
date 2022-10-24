@@ -33,7 +33,7 @@ const getPhotos = () => {
 
         <main>
           {/* Passing one prop to GalleryList */}
-        <GalleryList photoList = {photoList} getPhotos = {getPhotos}/>
+        <GalleryList photoList = {photoList} getPhotos = {getPhotos} />
         </main>
     
 

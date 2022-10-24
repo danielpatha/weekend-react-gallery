@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 //passing in the prop of photoList
-function GalleryList({photoList,getPhotos}){
+function GalleryList({photoList, getPhotos}){
 
     return(
         <>  
@@ -9,7 +9,8 @@ function GalleryList({photoList,getPhotos}){
  <GalleryItem
    key ={photo.id}
 photo={photo}
-getPhotos = {getPhotos}    
+getPhotos = {getPhotos}
+  
             />))}
         </>
     );

@@ -1,8 +1,11 @@
 import {useState} from "react";
 import './GalleryItem.css';
 
-function GalleryItem({photo, likeItem}){
+function GalleryItem({photo, likeItem}){ // These are the props.
+//photoDesc is a variable, which is set as true.
 const [photoDesc, setPhotoDesc] = useState(true)
+//These above are item components
+
 // const [likeAmount, setLikeAmount] = useState(0);
 //Nor did I need this
 
@@ -11,10 +14,10 @@ const [photoDesc, setPhotoDesc] = useState(true)
 //     console.log('clicked like button');
 //     likeItem(photo);
 // }; 
-// I didn't need this above
+// I didn't need this above since I just put an anonymous function within the html elements below.
 
 const getDesc = () => {
-setPhotoDesc(!photoDesc)
+setPhotoDesc(!photoDesc) // This is called a not operator '!'
 }
 
 
@@ -25,11 +28,11 @@ return(
 
 
 
-{photoDesc? <img src={photo.path} onClick={getDesc} />:
+{photoDesc ? <img src={photo.path} onClick={getDesc} />:
              <h2 onClick={getDesc}> {photo.description} </h2>}
 
-    <button onClick = {() => likeItem(photo.id)} className="btn">Like</button>
-    {/* This calls the function using the photo.id */}
+    <button onClick = {() => likeItem(photo.id)} className="btn">Like</button> 
+    {/* This calls the function using the photo.id and is an inline function*/}
 
     {photo.likes === 0 ?
    <div> No one likes this Image</div>:

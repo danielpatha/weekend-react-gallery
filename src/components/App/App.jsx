@@ -26,15 +26,18 @@ const getPhotos = () => {
 };
 
 //Here is the put, used for the lik button
-const likeItem = (id) => {
-  axios.put (`/gallery/like/${id}`)
+const likeItem = (id) => { // We need the ID for this.
+  axios.put (`/gallery/like/${id}`) // We have to put the ID because we need to know, THIS IS THE THING WE'RE WORKING WITH
   .then(response => {
     console.log('In PUT method', response.data)
+    console.log('in likeItem', id)
+    //Refresh the data
     getPhotos();
   })
   .catch(error => {
     console.log('likeItem failed', error);
   })
+  
 }
 
     return (
